@@ -1,0 +1,62 @@
+{
+  "name": "cassettes",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "tsx watch src/server/index.ts",
+    "dev:client": "vite --host 127.0.0.1",
+    "build": "npm run typecheck && vite build && esbuild src/server/index.ts --bundle --platform=node --target=node22 --format=esm --packages=external --outfile=dist/server/index.js",
+    "start": "node dist/server/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "setup:audio": "node scripts/setup-audio.mjs",
+    "format": "prettier --write src tests scripts vite.config.ts",
+    "benchmark": "tsx scripts/benchmark.ts",
+    "test:coverage": "vitest run --coverage",
+    "coverage:badge": "node scripts/coverage-badge.mjs",
+    "repo:badges": "node scripts/repo-badges.mjs"
+  },
+  "dependencies": {
+    "@fastify/static": "^10.1.6",
+    "better-sqlite3": "^13.0.3",
+    "chokidar": "^5.0.0",
+    "dotenv": "^18.0.8",
+    "fastify": "^5.12.7",
+    "ffmpeg-static": "^5.3.0",
+    "ffprobe-static": "^3.1.0",
+    "jspdf": "^4.2.1",
+    "lucide-react": "^1.57.0",
+    "music-metadata": "^12.2.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "@vitest/coverage-v8": "^4.1.12",
+    "concurrently": "^10.0.6",
+    "esbuild": "^0.28.2",
+    "fast-check": "^4.10.2",
+    "prettier": "^3.9.10",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4",
+    "vitest": "^4.1.12"
+  },
+  "license": "MIT",
+  "author": "Miguel S. Mendoza",
+  "funding": {
+    "type": "buymeacoffee",
+    "url": "https://buymeacoffee.com/miguelsmendoza"
+  }
+}

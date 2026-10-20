@@ -1,0 +1,36 @@
+{
+  "generatedAt": "2026-10-20T15:09:18.087Z",
+  "scope": "src/**/*.{ts,tsx}",
+  "metrics": {
+    "lines": {
+      "total": 2853,
+      "covered": 1570,
+      "skipped": 0,
+      "pct": 55.02
+    },
+    "statements": {
+      "total": 3137,
+      "covered": 1696,
+      "skipped": 0,
+      "pct": 54.06
+    },
+    "functions": {
+      "total": 838,
+      "covered": 323,
+      "skipped": 0,
+      "pct": 38.54
+    },
+    "branches": {
+      "total": 2318,
+      "covered": 905,
+      "skipped": 0,
+      "pct": 39.04
+    },
+    "branchesTrue": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  }
+}
